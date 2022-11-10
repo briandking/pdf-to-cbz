@@ -92,7 +92,7 @@ if __name__ == "__main__":
 	pdf_list = [i for i in os.listdir(read_dir) if i.endswith('.pdf') == True]
 	no_of_pdfs = str(len(pdf_list))
 	
-	n = 1
+	n = 0
 	for read_file in pdf_list:
 		
 		input_path = os.path.join(read_dir, read_file)
@@ -102,6 +102,7 @@ if __name__ == "__main__":
 		assert os.path.exists(input_path) == True # check that file exists
 		assert os.path.splitext(input_path)[1] == '.pdf' # check that file is pdf
 		
+		n = n + 1
 		print('working on', n, 'of', no_of_pdfs)
 		convert_pdf_to_comic(input_path, output_path)
 			
